@@ -2,8 +2,10 @@ import React from "react";
 import './Table.css'
 import TableItem from "../TableItem/TableItem";
 import UsersContext from "../../contexts/UsersContext";
+import ClearFilter from "../ClearFilter/ClearFilter";
+import UserNotFound from "../UserNotFound/UserNotFound";
 
-export default function Table ({showMore, lengthList, deleteUser}) {
+export default function Table ({showMore, lengthList, openPopup, clearFilter}) {
   const users = React.useContext(UsersContext)
   return(
     <div className="table">
@@ -17,7 +19,8 @@ export default function Table ({showMore, lengthList, deleteUser}) {
 
       <ul className="table table__list">
           {
-            users?.map((user, index)=>
+            users.length > 0 ?
+            users.map((user, index)=>
               index < lengthList ? <TableItem
                 key={index}
                 username={user.username}
@@ -26,11 +29,13 @@ export default function Table ({showMore, lengthList, deleteUser}) {
                 rating={user.rating}
                 buttonDelete={true}
                 id={user.id}
-                deleteUser={deleteUser}
+                openPopup={openPopup}
               />
                 :
                 null
             )
+              :
+              <UserNotFound clearFilter={clearFilter}/>
           }
       </ul>
       {

@@ -29,6 +29,10 @@
   color: #9EAAB4;
 }
 
+.form__button-wrapper{
+  height: 18px;
+}
+
 .form__button{
   margin: 0;
   border: none;

@@ -1,13 +1,20 @@
 import React from "react";
 import './Main.css'
-import SearchForm from "../Form/Form";
 import Selector from "../Selector/Selector";
 import Table from "../Table/Table";
+import Form from "../Form/Form";
 
-export default function Main ({filterUsers, showMore, lengthList, activeSelector, clearFilter, deleteUser}) {
+export default function Main ({filterUsers, showMore, lengthList, activeSelector, clearFilter, openPopup, setActiveSelector, valueInput, changeInputValue, searchUser}) {
   return(
     <main className="main">
-      <SearchForm/>
+      <Form
+        activeSelector={activeSelector}
+        setActiveSelector={setActiveSelector}
+        valueInput={valueInput}
+        changeInputValue={changeInputValue}
+        searchUser={searchUser}
+        clearFilter={clearFilter}
+      />
       <Selector
         filterUsers={filterUsers}
         activeSelector={activeSelector}
@@ -16,7 +23,8 @@ export default function Main ({filterUsers, showMore, lengthList, activeSelector
       <Table
         showMore={showMore}
         lengthList={lengthList}
-        deleteUser={deleteUser}
+        openPopup={openPopup}
+        clearFilter={clearFilter}
       />
     </main>
   )

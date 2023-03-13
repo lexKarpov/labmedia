@@ -21,12 +21,6 @@ export default function Selector ({filterUsers, activeSelector, clearFilter}) {
           </button>
         </li>
       </ul>
-      {
-        activeSelector ?
-          <button className="selector__clear hover" onClick={clearFilter}>Сбросить фильтр</button>
-          :
-          null
-      }
     </div>
   )
 }

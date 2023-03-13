@@ -1,0 +1,10 @@
+.no-user{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.no-user__message{
+  font-family: 'Inter-Medium', Arial, sans-serif;
+  font-size: 18px;
+}
