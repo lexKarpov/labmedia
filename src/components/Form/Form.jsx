@@ -1,7 +1,5 @@
 import React, {useState} from "react";
 import './Form.css'
-import search from '../../UI/icons/form/search.svg'
-import clear from '../../UI/icons/form/clear.svg'
 
 export default function Form({findFilms, handleSmallMetr, toggleSmallMeter}) {
   // const windowWidth = useWindowDimensions().width >= 730
@@ -21,6 +19,7 @@ export default function Form({findFilms, handleSmallMetr, toggleSmallMeter}) {
             value={val}
             onChange={(e) => setVal(e.target.value)}
             className="form__input"
+            placeholder="Поиск по имени или e-mail"
           />
         </label>
 

@@ -2,9 +2,10 @@
 
 }
 .header__title{
+  font-family: 'Inter-ExtraBold', Arial, sans-serif;
   font-weight: 700;
   font-size: 24px;
   line-height: 28px;
-  color: #333333;
-  margin-bottom: 20px;
+  color: #333;
+  letter-spacing: .2px;
 }

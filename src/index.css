@@ -1,11 +1,15 @@
+@import url(./vendor/normalize.css);
 @import url(vendor/fonts/inter.css);
+
 body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
   background-color: #F7F7F7;
-  font-family: 'Inter', Arial, sans-serif;
-  font-style:  normal;
+  font-family: 'Inter-Medium', Arial, sans-serif;
+  font-size: 10px;
+  line-height: 14px;
+  font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
