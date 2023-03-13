@@ -1,8 +1,8 @@
-import React from "react";
+import React from "react"
 import './Main.css'
-import Selector from "../Selector/Selector";
-import Table from "../Table/Table";
-import Form from "../Form/Form";
+import Selector from "../Selector/Selector"
+import Table from "../Table/Table"
+import Form from "../Form/Form"
 
 export default function Main(
   {

@@ -1,13 +1,14 @@
-import React, {useEffect, useState} from "react";
-import './App.css';
-import Header from "../Header/Header";
-import Main from "../Main/Main";
-import InfoTooltip from "../InfoTooltip/InfoTooltip";
-import getUsers from "../../utils/api";
-import UsersContext from "../../contexts/UsersContext";
-import Footer from "../Footer/Footer";
+import React, {useEffect, useState} from "react"
+import './App.css'
+import InfoTooltip from "../InfoTooltip/InfoTooltip"
+import getUsers from "../../utils/api"
+import UsersContext from "../../contexts/UsersContext"
+import {Route, Routes, useLocation, useNavigate} from "react-router-dom"
+import SearchedUser from "../SearchedUser/SearchedUser"
+import NotFound from "../NotFound/NotFound"
+import MainScreen from "../MainScreen/MainScreen"
 
-function App() {
+export default function App() {
   const [valueInput, setValueInput] = useState('')
   const [users, setUsers] = useState([])
   const [initialUsers, setInitialUsers] = useState([])
@@ -18,16 +19,21 @@ function App() {
   const [isSelectedInfoTooltip, setIsSelectedInfoTooltip] = useState(false)
   const [id, setId] = useState('')
   const [preloader, setPreloader] = useState(false)
+  const [searchedUser, setSearchedUser] = useState([])
+  let navigate = useNavigate()
+  const locate = useLocation()
 
   function searchUser(e) {
     e.preventDefault()
     if (!valueInput) return null
-    const searchedUsser = users.filter(el => {
+    clearFilter()
+    const searchedUser = users.filter(el => {
       if (el.username.toLowerCase() === valueInput.toLowerCase().trim() || el.email.toLowerCase() === valueInput.toLowerCase().trim()) {
         return el
       }
     })
-    setUsers(searchedUsser)
+    setSearchedUser(searchedUser)
+    navigate('/searchedUser')
   }
 
   function changeInputValue(value) {
@@ -42,10 +48,11 @@ function App() {
           setUsers(res)
           setInitialUsers(res)
           setPreloader(false)
+          if(locate.pathname === '/searchedUser') navigate('/')
         }
       )
       .catch(err => console.log(err))
-  }, [])
+  },[])
 
   function showMore() {
     setLengthList(lengthList + 5)
@@ -74,8 +81,8 @@ function App() {
         break
       default:
         registration_dateList = [...users].sort(function (a, b) {
-          return new Date(b.registration_date) - new Date(a.registration_date);
-        });
+          return new Date(b.registration_date) - new Date(a.registration_date)
+        })
         if (counterDate % 2 === 0) {
           setUsers(registration_dateList)
         } else {
@@ -98,6 +105,7 @@ function App() {
     }
     closePopup()
     setValueInput('')
+    navigate('/')
   }
 
   function closePopup() {
@@ -111,31 +119,54 @@ function App() {
 
   return (
     <UsersContext.Provider value={users}>
-      <div className="App">
-        <Header/>
-        <Main
-          filterUsers={filterUsers}
-          showMore={showMore}
-          lengthList={lengthList}
-          activeSelector={activeSelector}
-          clearFilter={clearFilter}
-          openPopup={openPopup}
-          setActiveSelector={setActiveSelector}
-          changeInputValue={changeInputValue}
-          valueInput={valueInput}
-          searchUser={searchUser}
-          preloader={preloader}
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <MainScreen
+              filterUsers={filterUsers}
+              showMore={showMore}
+              lengthList={lengthList}
+              activeSelector={activeSelector}
+              clearFilter={clearFilter}
+              openPopup={openPopup}
+              setActiveSelector={setActiveSelector}
+              changeInputValue={changeInputValue}
+              valueInput={valueInput}
+              searchUser={searchUser}
+              preloader={preloader}
+            />
+          }
         />
-        <Footer/>
-        <InfoTooltip
-          onClose={closePopup}
-          isOpen={isSelectedInfoTooltip}
-          deleteUser={deleteUser}
+        <Route
+          path="/searchedUser"
+          element={
+            <SearchedUser
+              username={searchedUser[0]?.username}
+              email={searchedUser[0]?.email}
+              registration_date={searchedUser[0]?.registration_date}
+              rating={searchedUser[0]?.rating}
+              id={searchedUser[0]?.id}
+              buttonDelete={true}
+              openPopup={openPopup}
+              navigate={navigate}
+            />}
         />
+        <Route
+          path="/12345"
+          element={<NotFound/>}
+        />
+        <Route
+          path="*"
+          element={<NotFound/>}
+        />
+      </Routes>
 
-      </div>
+      <InfoTooltip
+        onClose={closePopup}
+        isOpen={isSelectedInfoTooltip}
+        deleteUser={deleteUser}
+      />
     </UsersContext.Provider>
-  );
+  )
 }
-
-export default App;

@@ -1,13 +1,13 @@
-import React from "react";
+import React from "react"
 import './Table.css'
-import TableItem from "../TableItem/TableItem";
-import UsersContext from "../../contexts/UsersContext";
-import UserNotFound from "../UserNotFound/UserNotFound";
-import Preloader from "../Preloader/Preloader";
+import TableItem from "../TableItem/TableItem"
+import UsersContext from "../../contexts/UsersContext"
+import UserNotFound from "../UserNotFound/UserNotFound"
+import Preloader from "../Preloader/Preloader"
 
-export default function Table ({showMore, lengthList, openPopup, clearFilter, preloader}) {
+export default function Table({showMore, lengthList, openPopup, clearFilter, preloader}) {
   const users = React.useContext(UsersContext)
-  return(
+  return (
     <div className="table">
       <TableItem
         username="Имя пользователя"
@@ -17,29 +17,29 @@ export default function Table ({showMore, lengthList, openPopup, clearFilter, pr
         buttonDelete={null}
       />
       <ul className="table table__list">
-          {
-            preloader ?
-              <Preloader/>
-              :
+        {
+          preloader ?
+            <Preloader/>
+            :
 
             (users.length > 0 ?
-            users.map((user, index)=>
-              index < lengthList ? <TableItem
-                key={index}
-                username={user.username}
-                email={user.email}
-                registration_date={user.registration_date}
-                rating={user.rating}
-                buttonDelete={true}
-                id={user.id}
-                openPopup={openPopup}
-              />
-                :
-                null
-            )
+              users.map((user, index) =>
+                index < lengthList ? <TableItem
+                    key={index}
+                    username={user.username}
+                    email={user.email}
+                    registration_date={user.registration_date}
+                    rating={user.rating}
+                    buttonDelete={true}
+                    id={user.id}
+                    openPopup={openPopup}
+                  />
+                  :
+                  null
+              )
               :
               <UserNotFound clearFilter={clearFilter}/>)
-          }
+        }
       </ul>
       {
         lengthList >= users.length || preloader

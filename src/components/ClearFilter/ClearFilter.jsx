@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 import './ClearFilter.css'
 
 export default function ClearFilter({clearFilter}) {

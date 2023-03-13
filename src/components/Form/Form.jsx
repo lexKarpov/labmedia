@@ -1,6 +1,6 @@
-import React from "react";
+import React from "react"
 import './Form.css'
-import ClearFilter from "../ClearFilter/ClearFilter";
+import ClearFilter from "../ClearFilter/ClearFilter"
 
 export default function Form({activeSelector, changeInputValue, valueInput, searchUser, clearFilter}) {
   return (
