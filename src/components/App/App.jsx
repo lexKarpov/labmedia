@@ -5,6 +5,7 @@ import Main from "../Main/Main";
 import InfoTooltip from "../InfoTooltip/InfoTooltip";
 import getUsers from "../../utils/api";
 import UsersContext from "../../contexts/UsersContext";
+import Footer from "../Footer/Footer";
 
 function App() {
   const [valueInput, setValueInput] = useState('')
@@ -125,11 +126,13 @@ function App() {
           searchUser={searchUser}
           preloader={preloader}
         />
+        <Footer/>
         <InfoTooltip
           onClose={closePopup}
           isOpen={isSelectedInfoTooltip}
           deleteUser={deleteUser}
         />
+
       </div>
     </UsersContext.Provider>
   );
