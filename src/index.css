@@ -30,6 +30,12 @@ button{
   transition: transform .2s ease;
 }
 
+.goHome{
+  text-decoration: none;
+  color: #9EAAB4;
+  max-width: max-content;
+}
+
 .hover:hover{
   cursor: pointer;
   transform: scale(1.2);

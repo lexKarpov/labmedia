@@ -54,7 +54,6 @@
 }
 
 .popup__action {
-  font-style: normal;
   font-weight: 500;
   font-size: 12px;
   line-height: 15px;
@@ -71,6 +70,23 @@
   background: #0CB4F1;
   cursor: pointer;
 }
+
+@media all and (max-width: 858px) {
+  .popup__window-wrap {
+    width: 80%;
+    height: 100px;
+    gap: 10px;
+    margin: 0 auto;
+    padding-bottom: 10px;
+  }
+  .popup__message{
+    text-align: center;
+  }
+  .popup__buttons-wrapper {
+    gap: 16px;
+  }
+}
+
 
 @keyframes view {
   from {
