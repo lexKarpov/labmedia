@@ -1,0 +1,25 @@
+.footer{
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  color: #9EAAB4;
+}
+
+.footer__social{
+  grid-column: -2/-1;
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.footer__author{
+  width: max-content;
+}
+
+.footer__item{
+  text-decoration: none;
+}

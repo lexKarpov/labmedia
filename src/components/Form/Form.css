@@ -1,0 +1,42 @@
+.form {
+  width: 100%;
+  background: #FFFFFF;
+  box-shadow: 0 18px 15px rgba(148, 148, 148, 0.15);
+  border-radius: 7px;
+  padding: 12px 44px 16px 16px;
+  box-sizing: border-box;
+  margin-bottom: 70px;
+}
+
+.form__label {
+  background: #ECEFF0;
+  border-radius: 4px;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  padding: 4px;
+  margin-bottom: 23px;
+}
+
+.form__input {
+  font-family: 'Inter-bold', Arial, sans-serif;
+  letter-spacing: .5px;
+  grid-column: 2/-1;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  font-size: 12px;
+  line-height: 16px;
+  color: #9EAAB4;
+}
+
+.form__button-wrapper {
+  height: 18px;
+}
+
+.form__button_type_submit {
+  grid-column: 1/2;
+  background: url("../../UI/icons/form/search.svg");
+  width: 24px;
+  height: 24px;
+  padding: 0;
+}

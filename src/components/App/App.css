@@ -1,0 +1,12 @@
+.App {
+  height: max-content;
+  min-height: 100vh;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1000px;
+  padding: 12px 12px 12px 27px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+

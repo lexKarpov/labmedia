@@ -1,0 +1,36 @@
+@import url(./vendor/normalize.css);
+@import url(vendor/fonts/inter.css);
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: #F7F7F7;
+  font-family: 'Inter-Medium', Arial, sans-serif;
+  font-style:  normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root{
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #F7F7F7;
+}
+
+button{
+  border: none;
+  background-color: transparent;
+  font-family: 'Inter-Medium', Arial, sans-serif;
+  transition: transform .2s ease;
+}
+
+.hover:hover{
+  cursor: pointer;
+  transform: scale(1.2);
+}
