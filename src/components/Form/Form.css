@@ -1,0 +1,57 @@
+.form{
+  width: 100%;
+  background: #FFFFFF;
+  box-shadow: 0 18px 15px rgba(148, 148, 148, 0.15);
+  border-radius: 7px;
+  padding: 12px 44px 16px 16px;
+  box-sizing: border-box;
+}
+
+.form__label{
+  background: #ECEFF0;
+  border-radius: 4px;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  padding: 9px;
+  margin-bottom: 24px;
+}
+
+.form__input{
+  grid-column: 2/-1;
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+
+.form__button{
+  margin: 0;
+  border: none;
+}
+
+.form__button:hover{
+  cursor: pointer;
+}
+
+.form__button_type_submit{
+  grid-column: 1/2;
+  background: url("../../UI/icons/form/search.svg");
+  width: 24px;
+  height: 24px;
+  padding: 0;
+
+}
+
+.form__button_type_clear{
+  max-width: 160px;
+  padding-left: 20px;
+  background: left / contain no-repeat url("../../UI/icons/form/clear.svg");
+}
+
+
+.clear__icon{
+
+}
+
+.clear__description{
+
+}
