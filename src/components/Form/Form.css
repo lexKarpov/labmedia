@@ -5,7 +5,7 @@
   border-radius: 7px;
   padding: 12px 44px 16px 16px;
   box-sizing: border-box;
-  margin-bottom: 72px;
+  margin-bottom: 70px;
 }
 
 .form__label{
@@ -46,11 +46,11 @@
 }
 
 .form__button_type_clear{
-  /*max-width: 160px;*/
+  font-family: 'Inter-semibold', Arial, sans-serif;
   padding-left: 20px;
   background: left / contain no-repeat url("../../UI/icons/form/clear.svg");
   background-size: 15px;
-  font-weight: 500;
+  letter-spacing: .4px;
   font-size: 12px;
   line-height: 16px;
   color: #4F4F4F;

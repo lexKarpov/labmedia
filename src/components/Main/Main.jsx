@@ -10,7 +10,7 @@ export default function Main () {
     <main className="main">
       <SearchForm/>
       <Selector/>
-      {/*<Table/>*/}
+      <Table/>
     </main>
   )
 }

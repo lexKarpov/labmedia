@@ -38,9 +38,8 @@ main {
  * `article` contexts in Chrome, Firefox, and Safari.
  */
 
-h1, p, ul {
+h1, p{
   margin: 0;
-  list-style-type: none;
   padding: 0;
 }
 

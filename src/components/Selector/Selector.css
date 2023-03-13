@@ -1,20 +1,49 @@
 .selector{
   display: flex;
-  gap: 8px;
+  align-items: center;
+  gap: 10px;
   color: #9EAAB4;
   letter-spacing: .2px;
-}
-.buttons{
-  display: flex;
-  gap: 10px;
+  font-size: 10px;
+  line-height: 14px;
+  margin-bottom: 15px;
 }
 
 .selector__description{
-
+  font-family: 'Inter-Medium', Arial, sans-serif;
+  letter-spacing: .3px;
 }
 
-.selector__button{
+.buttons{
+  display: flex;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+}
+
+
+.buttons__item{
+  list-style-type: none;
+}
+
+.buttons__button{
+  font-family: 'Inter-semibold', Arial, sans-serif;
+  font-size: 10px;
+  line-height: 14px;
   border: none;
-  border-bottom: 1px dashed #333;
+  letter-spacing: .5px;
+  border-bottom: 1.5px dashed #9EAAB4;
   background-color: transparent;
+  padding: 0;
+  margin: 0;
+  color: #9EAAB4;
+}
+
+.buttons__button:hover{
+  cursor: pointer;
+}
+
+.buttons__button_active{
+  color: #333;
+  border-bottom: 1.5px dashed #333;
 }
