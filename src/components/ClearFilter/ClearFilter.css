@@ -1,0 +1,13 @@
+.clearFilter {
+  margin: 0;
+  border: none;
+  font-family: 'Inter-semibold', Arial, sans-serif;
+  padding-left: 20px;
+  background: left / contain no-repeat url("../../UI/icons/form/clear.svg");
+  background-size: 15px;
+  letter-spacing: .4px;
+  font-size: 12px;
+  line-height: 16px;
+  color: #4F4F4F;
+}
+

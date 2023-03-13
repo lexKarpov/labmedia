@@ -3,8 +3,6 @@ import './Form.css'
 import ClearFilter from "../ClearFilter/ClearFilter";
 
 export default function Form({activeSelector, changeInputValue, valueInput, searchUser, clearFilter}) {
-
-
   return (
     <form className="form" onSubmit={searchUser}>
       <label className="form__label">
@@ -18,14 +16,14 @@ export default function Form({activeSelector, changeInputValue, valueInput, sear
           placeholder="Поиск по имени или e-mail"
         />
       </label>
-          <div className="form__button-wrapper">
-            {
-              activeSelector ?
-                <ClearFilter clearFilter={clearFilter}/>
-                :
-                null
-            }
-          </div>
+      <div className="form__button-wrapper">
+        {
+          activeSelector ?
+            <ClearFilter clearFilter={clearFilter}/>
+            :
+            null
+        }
+      </div>
     </form>
 
   )

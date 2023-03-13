@@ -2,10 +2,10 @@ import React from "react";
 import './Table.css'
 import TableItem from "../TableItem/TableItem";
 import UsersContext from "../../contexts/UsersContext";
-import ClearFilter from "../ClearFilter/ClearFilter";
 import UserNotFound from "../UserNotFound/UserNotFound";
+import Preloader from "../Preloader/Preloader";
 
-export default function Table ({showMore, lengthList, openPopup, clearFilter}) {
+export default function Table ({showMore, lengthList, openPopup, clearFilter, preloader}) {
   const users = React.useContext(UsersContext)
   return(
     <div className="table">
@@ -16,10 +16,13 @@ export default function Table ({showMore, lengthList, openPopup, clearFilter}) {
         rating="Рейтинг"
         buttonDelete={null}
       />
-
       <ul className="table table__list">
           {
-            users.length > 0 ?
+            preloader ?
+              <Preloader/>
+              :
+
+            (users.length > 0 ?
             users.map((user, index)=>
               index < lengthList ? <TableItem
                 key={index}
@@ -35,11 +38,20 @@ export default function Table ({showMore, lengthList, openPopup, clearFilter}) {
                 null
             )
               :
-              <UserNotFound clearFilter={clearFilter}/>
+              <UserNotFound clearFilter={clearFilter}/>)
           }
       </ul>
       {
-        lengthList >= users.length? null : <button className="table__more hover" onClick={showMore}>Показать еще</button>
+        lengthList >= users.length || preloader
+          ?
+          null
+          :
+          <button
+            className="table__more hover"
+            onClick={showMore}
+          >
+            Показать еще
+          </button>
       }
     </div>
   )

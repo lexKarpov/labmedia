@@ -1,4 +1,4 @@
-.table__item{
+.table__item {
   display: grid;
   grid-template-columns: 26.6% 26.9% 26% 1fr max-content;
   grid-template-rows: auto;
@@ -13,7 +13,7 @@
   width: 100%;
 }
 
-.table__item_type_user{
+.table__item_type_user {
   font-size: 12px;
   line-height: 16px;
   padding-top: 14px;
@@ -21,7 +21,7 @@
   margin-bottom: 18px;
 }
 
-.table__description, .table__name{
+.table__description, .table__name {
   margin: 0;
   font-family: 'Inter-Medium', Arial, sans-serif;
   font-style: normal;
@@ -31,12 +31,12 @@
   color: #9EAAB4;
 }
 
-.table__description_type_user, .table__name_type_user{
+.table__description_type_user, .table__name_type_user {
   font-size: 12px;
   line-height: 16px;
 }
 
-.table__name_type_user{
+.table__name_type_user {
   font-family: 'Inter-bold', Arial, sans-serif;
   font-weight: 700;
   font-size: 12px;
@@ -44,7 +44,7 @@
   color: #0CB4F1;
 }
 
-.table__delete-user{
+.table__delete-user {
   background: center / cover no-repeat url("../../UI/icons/delete.svg");
   width: 16px;
   height: 16px;

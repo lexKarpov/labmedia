@@ -1,4 +1,4 @@
-.table{
+.table {
   box-sizing: border-box;
   width: 100%;
   background-color: #fff;
@@ -10,14 +10,15 @@
   margin: 0;
 }
 
-.table__list{
+.table__list {
   margin-top: 20px;
   border-radius: 0;
   list-style-type: none;
   padding: 0;
 }
 
-.table__more{
+.table__more {
+  margin-top: 20px;
   border: none;
   background-color: transparent;
   font-family: 'Inter-bold', Arial, sans-serif;

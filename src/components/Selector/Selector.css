@@ -1,4 +1,4 @@
-.selector{
+.selector {
   display: grid;
   align-items: center;
   grid-template-columns: repeat(2, max-content) 1fr max-content;
@@ -10,28 +10,27 @@
   margin-bottom: 15px;
 }
 
-.selector__description{
+.selector__description {
   font-family: 'Inter-Medium', Arial, sans-serif;
   letter-spacing: .3px;
 }
 
-.selector__clear{
+.selector__clear {
   grid-column: -2/-1;
 }
 
-.buttons{
+.buttons {
   display: flex;
   gap: 10px;
   padding: 0;
   margin: 0;
 }
 
-
-.buttons__item{
+.buttons__item {
   list-style-type: none;
 }
 
-.buttons__button{
+.buttons__button {
   font-family: 'Inter-semibold', Arial, sans-serif;
   font-size: 10px;
   line-height: 14px;
@@ -44,7 +43,7 @@
   color: #9EAAB4;
 }
 
-.buttons__button_active{
+.buttons__button_active {
   color: #333;
   border-bottom: 1.5px dashed #333;
 }

@@ -16,12 +16,13 @@ function App() {
   const [counterDate, setCounterDate] = useState(0)
   const [isSelectedInfoTooltip, setIsSelectedInfoTooltip] = useState(false)
   const [id, setId] = useState('')
+  const [preloader, setPreloader] = useState(false)
 
   function searchUser(e) {
     e.preventDefault()
-    if(!valueInput) return null
+    if (!valueInput) return null
     const searchedUsser = users.filter(el => {
-      if(el.username.toLowerCase() === valueInput.toLowerCase().trim() || el.email.toLowerCase() === valueInput.toLowerCase().trim()){
+      if (el.username.toLowerCase() === valueInput.toLowerCase().trim() || el.email.toLowerCase() === valueInput.toLowerCase().trim()) {
         return el
       }
     })
@@ -34,10 +35,12 @@ function App() {
   }
 
   useEffect(_ => {
+    setPreloader(true)
     getUsers()
       .then(res => {
           setUsers(res)
           setInitialUsers(res)
+          setPreloader(false)
         }
       )
       .catch(err => console.log(err))
@@ -61,20 +64,20 @@ function App() {
     switch (selector) {
       case 'rating':
         ratingList = [...users].sort((a, b) => a.rating - b.rating)
-      if(counterRating % 2 === 0){
-        setUsers(ratingList)
-      }else{
-        setUsers(ratingList.reverse())
-      }
+        if (counterRating % 2 === 0) {
+          setUsers(ratingList)
+        } else {
+          setUsers(ratingList.reverse())
+        }
         setCounterRating(counterRating + 1)
         break
       default:
         registration_dateList = [...users].sort(function (a, b) {
           return new Date(b.registration_date) - new Date(a.registration_date);
         });
-        if(counterDate % 2 === 0){
+        if (counterDate % 2 === 0) {
           setUsers(registration_dateList)
-        }else{
+        } else {
           setUsers(registration_dateList.reverse())
         }
         setCounterDate(counterDate + 1)
@@ -83,11 +86,11 @@ function App() {
 
   function deleteUser(afterSearch) {
     let usersWithoutDeleteUser
-    if(afterSearch){
+    if (afterSearch) {
       usersWithoutDeleteUser = initialUsers.filter(el => el.id !== id.toString())
       setUsers(usersWithoutDeleteUser)
       setInitialUsers(usersWithoutDeleteUser)
-    }else{
+    } else {
       usersWithoutDeleteUser = users.filter(el => el.id !== id.toString())
       setUsers(usersWithoutDeleteUser)
       setInitialUsers(usersWithoutDeleteUser)
@@ -100,7 +103,7 @@ function App() {
     setIsSelectedInfoTooltip(false)
   }
 
-  function openPopup(id){
+  function openPopup(id) {
     setIsSelectedInfoTooltip(true)
     setId(id)
   }
@@ -120,7 +123,7 @@ function App() {
           changeInputValue={changeInputValue}
           valueInput={valueInput}
           searchUser={searchUser}
-
+          preloader={preloader}
         />
         <InfoTooltip
           onClose={closePopup}

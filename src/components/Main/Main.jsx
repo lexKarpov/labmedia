@@ -4,8 +4,22 @@ import Selector from "../Selector/Selector";
 import Table from "../Table/Table";
 import Form from "../Form/Form";
 
-export default function Main ({filterUsers, showMore, lengthList, activeSelector, clearFilter, openPopup, setActiveSelector, valueInput, changeInputValue, searchUser}) {
-  return(
+export default function Main(
+  {
+    filterUsers,
+    showMore,
+    lengthList,
+    activeSelector,
+    clearFilter,
+    openPopup,
+    setActiveSelector,
+    valueInput,
+    changeInputValue,
+    searchUser,
+    preloader
+  }
+) {
+  return (
     <main className="main">
       <Form
         activeSelector={activeSelector}
@@ -25,6 +39,7 @@ export default function Main ({filterUsers, showMore, lengthList, activeSelector
         lengthList={lengthList}
         openPopup={openPopup}
         clearFilter={clearFilter}
+        preloader={preloader}
       />
     </main>
   )

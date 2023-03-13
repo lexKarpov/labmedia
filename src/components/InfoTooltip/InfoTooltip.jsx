@@ -1,7 +1,7 @@
 import React from 'react'
 import './InfoTooltip.css'
 
-export default function InfoTooltip({ isOpen, onClose, deleteUser}) {
+export default function InfoTooltip({isOpen, onClose, deleteUser}) {
   return (
     <div className={`popup popup_type_image ${isOpen ? 'popup_opened' : ''}`}>
       <div className="popup__window-wrap popup_type_info-tool">

@@ -6,7 +6,7 @@ body {
   padding: 0;
   min-height: 100vh;
   background-color: #F7F7F7;
-  font-family: 'Inter', Arial, sans-serif;
+  font-family: 'Inter-Medium', Arial, sans-serif;
   font-style:  normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -20,6 +20,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #F7F7F7;
 }
 
 button{
