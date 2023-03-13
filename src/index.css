@@ -21,3 +21,12 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+button{
+  transition: transform .2s ease;
+}
+
+.hover:hover{
+  cursor: pointer;
+  transform: scale(1.2);
+}

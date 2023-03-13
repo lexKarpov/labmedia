@@ -1,13 +1,10 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import './Table.css'
 import TableItem from "../TableItem/TableItem";
+import UsersContext from "../../contexts/UsersContext";
 
-export default function Table () {
-  const users = [
-    {username: 'alex', email: 'alexis@mail.ru', registration_date: '11.05.2020', rating: 30, id: 20},
-    {username: 'tanya', email: 'tanya@mail.ru', registration_date: '4.05.2022', rating: 20, id: 10},
-    {username: 'alex', email: 'alexis@mail.ru', registration_date: '23.05.2023', rating: 4, id: 230},
-  ]
+export default function Table ({showMore, lengthList}) {
+  const users = React.useContext(UsersContext)
   return(
     <div className="table">
       <TableItem
@@ -19,10 +16,9 @@ export default function Table () {
       />
 
       <ul className="table table__list">
-
           {
-            users.map((user, index)=>
-              <TableItem
+            users?.map((user, index)=>
+              index < lengthList ? <TableItem
                 key={index}
                 username={user.username}
                 email={user.email}
@@ -31,10 +27,14 @@ export default function Table () {
                 buttonDelete={true}
                 id={user.id}
               />
+                :
+                null
             )
           }
-
       </ul>
+      {
+        lengthList >= users.length? null : <button className="table__more hover" onClick={showMore}>Показать еще</button>
+      }
     </div>
   )
 }

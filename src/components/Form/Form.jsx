@@ -14,7 +14,7 @@ export default function Form({findFilms, handleSmallMetr, toggleSmallMeter}) {
   return (
       <form className="form" onSubmit={(e) => writeValue(e, val)}>
         <label className="form__label">
-          <button className="form__button form__button_type_submit" type="submit"/>
+          <button className="form__button form__button_type_submit hover" type="submit"/>
           <input
             value={val}
             onChange={(e) => setVal(e.target.value)}
@@ -23,7 +23,7 @@ export default function Form({findFilms, handleSmallMetr, toggleSmallMeter}) {
           />
         </label>
 
-        <button className="form__button form__button_type_clear" type="button">
+        <button className="form__button form__button_type_clear hover" type="button">
           Очистить фильтр
         </button>
       </form>

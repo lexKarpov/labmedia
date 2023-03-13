@@ -51,7 +51,3 @@
   border: none;
   margin-right: 18px;
 }
-
-.table__delete-user:hover{
-  cursor: pointer;
-}

@@ -32,10 +32,6 @@
   border: none;
 }
 
-.form__button:hover{
-  cursor: pointer;
-}
-
 .form__button_type_submit{
   grid-column: 1/2;
   background: url("../../UI/icons/form/search.svg");

@@ -9,7 +9,7 @@ export default function TableItem ({username, email, registration_date, rating, 
         <p className={buttonDelete? "table__description table__description_type_user" : "table__description"}>{registration_date}</p>
         <p className={buttonDelete? "table__description table__description_type_user" : "table__description"}>{rating}</p>
         {
-          buttonDelete? <button className="table__delete-user" onClick={()=> console.log('delete' + ' ' + id)}/> : null
+          buttonDelete? <button className="table__delete-user hover" onClick={()=> console.log('delete' + ' ' + id)}/> : null
         }
       </div>
   )
