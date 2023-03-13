@@ -18,6 +18,8 @@
 }
 
 .form__input{
+  font-family: 'Inter-bold', Arial, sans-serif;
+  letter-spacing: .5px;
   grid-column: 2/-1;
   outline: none;
   border: none;

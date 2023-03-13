@@ -23,6 +23,9 @@ body {
 }
 
 button{
+  border: none;
+  background-color: transparent;
+  font-family: 'Inter-Medium', Arial, sans-serif;
   transition: transform .2s ease;
 }
 

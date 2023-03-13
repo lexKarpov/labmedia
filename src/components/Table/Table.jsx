@@ -1,9 +1,9 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import './Table.css'
 import TableItem from "../TableItem/TableItem";
 import UsersContext from "../../contexts/UsersContext";
 
-export default function Table ({showMore, lengthList}) {
+export default function Table ({showMore, lengthList, deleteUser}) {
   const users = React.useContext(UsersContext)
   return(
     <div className="table">
@@ -26,6 +26,7 @@ export default function Table ({showMore, lengthList}) {
                 rating={user.rating}
                 buttonDelete={true}
                 id={user.id}
+                deleteUser={deleteUser}
               />
                 :
                 null
