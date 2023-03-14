@@ -1,4 +1,7 @@
 # labmedia
+
+## [Посмотреть приложение](labmedia-e9c27.web.app)
+
 ## Технологии:
 * React js
 * JavaScript
