@@ -1,6 +1,6 @@
 # labmedia
 
-## [Посмотреть приложение](labmedia-e9c27.web.app)
+#### Посмотреть приложение [https://labmedia-e9c27.firebaseapp.com](https://labmedia-e9c27.firebaseapp.com/)
 
 ## Технологии:
 * React js
