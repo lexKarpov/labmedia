@@ -4,6 +4,8 @@
 
 ## Технологии:
 * React js
+* React-router-dom
+* React-hooks
 * JavaScript
 * CSS
 
