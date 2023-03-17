@@ -8,11 +8,7 @@ import Footer from "../Footer/Footer"
 
 export default function SearchedUser(
   {
-    username,
-    email,
-    registration_date,
-    rating,
-    id,
+    searchedUserList,
     buttonDelete,
     openPopup,
   }
@@ -25,19 +21,27 @@ export default function SearchedUser(
       />
       <main className="main">
         {
-          username ?
-            <div className="searched-user">
-              <TableItem
-                username={username}
-                email={email}
-                registration_date={registration_date}
-                rating={rating}
-                id={id}
-                buttonDelete={buttonDelete}
-                openPopup={openPopup}
-              />
+          searchedUserList.length ?
+            <ul className="table">
+              {
+                searchedUserList.map((user, index) => {
+                  return (
+                      <TableItem
+                        key={index}
+                        username={user.username}
+                        email={user.email}
+                        registration_date={user.registration_date}
+                        rating={user.rating}
+                        id={user.id}
+                        buttonDelete={buttonDelete}
+                        openPopup={openPopup}
+                      />
+                  )
+                })
+              }
+
               <Link to="/" className="goHome hover">На главную</Link>
-            </div>
+            </ul>
             :
             <UserNotFound/>
         }

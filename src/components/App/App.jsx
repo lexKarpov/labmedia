@@ -19,7 +19,7 @@ export default function App() {
   const [isSelectedInfoTooltip, setIsSelectedInfoTooltip] = useState(false)
   const [id, setId] = useState('')
   const [preloader, setPreloader] = useState(false)
-  const [searchedUser, setSearchedUser] = useState([])
+  const [searchedUsers, setSearchedUsers] = useState([])
   let navigate = useNavigate()
   const locate = useLocation()
 
@@ -28,11 +28,11 @@ export default function App() {
     if (!valueInput) return null
     clearFilter()
     const searchedUser = users.filter(el => {
-      if (el.username.toLowerCase() === valueInput.toLowerCase().trim() || el.email.toLowerCase() === valueInput.toLowerCase().trim()) {
+      if (el.username.toLowerCase().includes(valueInput.toLowerCase().trim()) || el.email.toLowerCase().includes(valueInput.toLowerCase().trim())) {
         return el
       }
     })
-    setSearchedUser(searchedUser)
+    setSearchedUsers(searchedUser)
     navigate('/searchedUser')
   }
 
@@ -142,11 +142,7 @@ export default function App() {
           path="/searchedUser"
           element={
             <SearchedUser
-              username={searchedUser[0]?.username}
-              email={searchedUser[0]?.email}
-              registration_date={searchedUser[0]?.registration_date}
-              rating={searchedUser[0]?.rating}
-              id={searchedUser[0]?.id}
+              searchedUserList={searchedUsers}
               buttonDelete={true}
               openPopup={openPopup}
               navigate={navigate}
